@@ -13,14 +13,12 @@
 				isOpen.value=false
 			},400)
 			
-		})
-		
-		
+		})	
 	}
 </script>
 
 <template>
-	<top-bar></top-bar>
+	<top-bar @goto="goto"></top-bar>
 	<index @goto="goto"></index>
 	<project @goto="goto"></project>
 	<div :class="[isOpen?'open-active':'open']"></div>

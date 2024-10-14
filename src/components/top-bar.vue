@@ -4,7 +4,8 @@
 		<div class="top-nav">
 			<a href="#index" class="nav-item">主页<br/><span>home</span></a>
 			<a href="#project" class="nav-item">项目<br/><span>project</span></a>
-			<a href="https://blog.zhoujump.club/" class="nav-item">博客<br/><span>blog</span></a>
+			<a @click="$emit('goto','https://blog.zhoujump.club')" class="nav-item">博客<br/><span>blog</span></a>
+			<a @click="$emit('goto','https://resume.zhoujump.club')" class="nav-item">简历<br/><span>resume</span></a>
 		</div>
 	</div>
 </template>
