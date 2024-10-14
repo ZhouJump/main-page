@@ -8,6 +8,7 @@ build:
   stage: build
   script:
     - npm install
+	- npm install -D vite@^2.5.2
     - npm run build
 
 pages:
