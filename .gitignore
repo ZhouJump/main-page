@@ -15,4 +15,4 @@ unpackage/dist/dev/
 # python
 *.pyc
 
- dist/
+dist/
