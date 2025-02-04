@@ -26,5 +26,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - run: install -D vite@^2.5.2
+    - run: npm install -D vite@^2.5.2
     - run: npm run build
