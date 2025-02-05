@@ -15,9 +15,6 @@
              data-ad-client="ca-pub-7990766290275978"
              data-ad-slot="6167392482">
         </ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </div>
 			<div v-if="projectList.length%2" style="opacity: 0;cursor: default;width: 380px;"></div>
 		</div>
