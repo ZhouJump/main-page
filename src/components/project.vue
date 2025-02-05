@@ -8,13 +8,14 @@
 				<div class="card-des">{{project.des}}</div>
 			</div>
       <div class="project-card">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-format="fluid"
-             data-ad-layout-key="-74+f2-19-5c+ec"
-             data-ad-client="ca-pub-7990766290275978"
-             data-ad-slot="6167392482">
-        </ins>
+        <amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-7990766290275978"
+                data-ad-slot="5277816790"
+                data-auto-format="rspv"
+                data-full-width="">
+          <div overflow=""></div>
+        </amp-ad>
       </div>
 			<div v-if="projectList.length%2" style="opacity: 0;cursor: default;width: 380px;"></div>
 		</div>
