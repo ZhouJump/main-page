@@ -7,16 +7,6 @@
 				<div class="card-title">{{project.title}}</div>
 				<div class="card-des">{{project.des}}</div>
 			</div>
-      <div class="project-card">
-        <amp-ad width="100vw" height="320"
-                type="adsense"
-                data-ad-client="ca-pub-7990766290275978"
-                data-ad-slot="5277816790"
-                data-auto-format="rspv"
-                data-full-width="">
-          <div overflow=""></div>
-        </amp-ad>
-      </div>
 			<div v-if="projectList.length%2" style="opacity: 0;cursor: default;width: 380px;"></div>
 		</div>
 	</div>
@@ -42,19 +32,19 @@
 			title:'掌上莆院',
 			des:'学校的教务系统真的很难用！',
 			img:'/uniedu.png',
-			link:'https://gitlab.com/zhoujump/JiaowuUniapp'
+			link:'https://github.com/ZhouJump/JiaowuUniapp'
 		},
 		{
 			title:'邮件收发系统',
 			des:'一个MySQL的小课程设计',
 			img:'/mymail.png',
-			link:'https://gitlab.com/zhoujump/mail-system-mysql'
+			link:'https://github.com/ZhouJump/mail-system-mysql'
 		},
 		{
 			title:'小蓝书',
 			des:'一个微信小程序的课程设计',
 			img:'/bluebook.png',
-			link:'https://gitlab.com/zhoujump/wechat-little-blue-book'
+			link:'https://github.com/ZhouJump/wechat-little-blue-book'
 		},
 	])
 </script>
