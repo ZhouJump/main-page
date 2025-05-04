@@ -19,31 +19,43 @@
 		{
 			title:'个人博客',
 			des:'我们所度过的每个平凡的日常，也许就是连续发生的奇迹。',
-			img:'/blog.png',
+			img:'/blog.jpg',
 			link:'https://blog.zhoujump.club'
 		},
 		{
 			title:'简历编辑器',
 			des:'做简历什么的，超简单的拉！',
-			img:'/resume.png',
+			img:'/resume.jpg',
 			link:'https://resume.zhoujump.club'
+		},
+		{
+			title:'QQ侧栏编辑插件',
+			des:'让你的QQ侧边栏清清爽爽',
+			img:'/qqsidebar.jpg',
+			link:'https://github.com/ZhouJump/qq-fuck-sidebar'
+		},
+		{
+			title:'码农名片生成器',
+			des:'生成vscode风格的名片',
+			img:'/businesscard.jpg',
+			link:'https://businesscard.zhoujump.club'
 		},
 		{
 			title:'掌上莆院',
 			des:'学校的教务系统真的很难用！',
-			img:'/uniedu.png',
+			img:'/uniedu.jpg',
 			link:'https://github.com/ZhouJump/JiaowuUniapp'
 		},
 		{
 			title:'邮件收发系统',
 			des:'一个MySQL的小课程设计',
-			img:'/mymail.png',
+			img:'/mymail.jpg',
 			link:'https://github.com/ZhouJump/mail-system-mysql'
 		},
 		{
 			title:'小蓝书',
 			des:'一个微信小程序的课程设计',
-			img:'/bluebook.png',
+			img:'/bluebook.jpg',
 			link:'https://github.com/ZhouJump/wechat-little-blue-book'
 		},
 	])
