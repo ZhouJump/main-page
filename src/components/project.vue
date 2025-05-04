@@ -2,11 +2,11 @@
 	<div id="project" class="project">
 		<div class="project-cont">
 			<div class="title">我的项目</div>
-			<div @click="$emit('goto',project.link)" v-for="project in projectList" class="project-card">
+			<a target="_blank" :href="project.link" v-for="project in projectList" class="project-card">
 				<img class="card-img" :src="project.img"/>
 				<div class="card-title">{{project.title}}</div>
 				<div class="card-des">{{project.des}}</div>
-			</div>
+			</a>
 			<div v-if="projectList.length%2" style="opacity: 0;cursor: default;width: 380px;"></div>
 		</div>
 	</div>
@@ -87,6 +87,7 @@
 		margin-left: 16px;
 	}
 	.project-card{
+		display: block;
 		height: 300px;
 		width: 380px;
 		border-radius: 8px;
@@ -95,6 +96,7 @@
 		overflow: hidden;
 		margin-top: 16px;
 		cursor: pointer;
+		text-decoration: none;
 	}
 	.project-card:hover{
 		box-shadow: var(--shadow-active);
