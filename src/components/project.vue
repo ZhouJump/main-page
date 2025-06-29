@@ -7,7 +7,7 @@
 				<div class="card-title">{{project.title}}</div>
 				<div class="card-des">{{project.des}}</div>
 			</a>
-			<div v-if="projectList.length%2" style="opacity: 0;cursor: default;width: 380px;"></div>
+			<div v-if="projectList.length%2" style="opacity: 0;width: 380px;"></div>
 		</div>
 	</div>
 	
@@ -87,19 +87,17 @@
 		margin-left: 16px;
 	}
 	.project-card{
+		transition-duration: 300ms;
 		display: block;
 		height: 300px;
 		width: 380px;
 		border-radius: 8px;
 		background-color: var(--sec-bg-color);
-		box-shadow: var(--shadow);
 		overflow: hidden;
 		margin-top: 16px;
-		cursor: pointer;
 		text-decoration: none;
 	}
 	.project-card:hover{
-		box-shadow: var(--shadow-active);
 		scale: 1.02;
 	}
 	.card-img{

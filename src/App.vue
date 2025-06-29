@@ -4,16 +4,13 @@
 	import index from './components/index.vue';
 	import project from './components/project.vue';
 	import "bootstrap-icons/font/bootstrap-icons.css"
-	const isOpen = ref(false)
 	function goto(url){
-		isOpen.value = true
-		nextTick(()=>{
-			setTimeout(()=>{
-				window.open(url)
-				isOpen.value=false
-			},400)
-			
-		})	
+		window.open(url)
+	}
+	window.addEventListener('mousemove', mouseMove);
+	function mouseMove(e){
+		document.querySelector('.mouse').style.left = e.clientX + 'px';
+		document.querySelector('.mouse').style.top = e.clientY + 'px';
 	}
 </script>
 
@@ -22,9 +19,22 @@
 	<index @goto="goto"></index>
 	<project @goto="goto"></project>
 	<div :class="[isOpen?'open-active':'open']"></div>
+	<div id="mouse" class="mouse">
+		<div class="mouse-inner"></div>
+	</div>
 </template>
 
 <style>
+	.mouse{
+		pointer-events: none;
+		z-index: 999;
+		position: fixed;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		backdrop-filter: invert(100%);
+		transform: translate(-50%, -50%);
+	}
 	.open{
 		position: fixed;
 		width: 100px;
@@ -53,26 +63,28 @@
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
+		cursor: none !important;
+	}
+	::selection{
+		background-color: var(--main-font-color);
+		color: var(--font-bg-color);
+	}
+	a{
+		cursor: none!important;
 	}
 	#app{
-		scroll-snap-type: y mandatory;
 		overflow: hidden;
 		overflow-y: auto;
 		scroll-behavior: smooth;
 		background-color: var(--main-bg-color);
 	}
-	*{
-		transition-duration: 400ms;
-	}
 	:root{
-		--main-bg-color:#F5F5FA;
+		--main-bg-color:#F9F4EB;
 		--sec-bg-color:#FFFFFF;
 		--main-font-color:#000000;
 		--sec-font-color:#747474;
+		--font-bg-color:#F0ECE5;
 		--active-font-color:#34495e;
-		--shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
-		--shadow-active: 0px 4px 8px rgba(0, 0, 0, 0.06), 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.06);
-		--bg-movie-fittler: invert(0%) blur(12px)
 	}
 	@media (prefers-color-scheme: dark) {
 	  :root {
@@ -81,7 +93,6 @@
 	   --main-font-color:#ffffffe6;
 	   --sec-font-color:#747474;
 	   --active-font-color:#ecf0f1;
-	   --bg-movie-fittler: hue-rotate(180deg) invert(80%) blur(12px)
 	  }
 	}
 </style>
