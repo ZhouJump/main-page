@@ -18,6 +18,7 @@
 	<top-bar @goto="goto"></top-bar>
 	<index @goto="goto"></index>
 	<project @goto="goto"></project>
+	<div class="foot"><a href="https://beian.miit.gov.cn/">湘ICP备2025141796号-1</a></div>
 	<div :class="[isOpen?'open-active':'open']"></div>
 	<div id="mouse" class="mouse">
 		<div class="mouse-inner"></div>
@@ -25,6 +26,17 @@
 </template>
 
 <style>
+	.foot{
+		padding: 1rem;
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		font-size: 0.8rem;
+		color: var(--sec-font-color);
+		a{
+			color: var(--sec-font-color);
+		}
+	}
 	.mouse{
 		pointer-events: none;
 		z-index: 999;
