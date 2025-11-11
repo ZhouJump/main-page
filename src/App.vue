@@ -18,7 +18,13 @@
 	<top-bar @goto="goto"></top-bar>
 	<index @goto="goto"></index>
 	<project @goto="goto"></project>
-	<div class="foot"><a href="https://beian.miit.gov.cn/">湘ICP备2025141796号-1</a></div>
+	<div class="foot">
+    <a target="_blank" href="https://beian.miit.gov.cn/">湘ICP备2025141796号-1</a>
+    <a target="_blank" href="https://beian.mps.gov.cn/#/query/webSearch?code=35021102002336">
+      <img class="logo" src="/beian.png"/>
+      闽公网安备35021102002336号
+    </a>
+  </div>
 	<div :class="[isOpen?'open-active':'open']"></div>
 	<div id="mouse" class="mouse">
 		<div class="mouse-inner"></div>
@@ -35,6 +41,9 @@
 		color: var(--sec-font-color);
 		a{
 			color: var(--sec-font-color);
+      .logo{
+        height: 1em;
+      }
 		}
 	}
 	.mouse{
