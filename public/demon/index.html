@@ -8,6 +8,7 @@
     <title>demon</title>
   </head>
   <body>
+    <button id="btn" title="点击屏幕" class="btn"></button>
     <img class="icon" src="icon.webp" alt="" />
     <div class="center-cont">
         <div class="center-cont-in">
@@ -61,11 +62,14 @@
     <div class="bottom-mask"></div>
   </body>
   <script>
-    const centerCont = document.querySelector('body');
-    window.addEventListener('click', () => {
-        centerCont.classList.toggle('active');
-        const tips = document.querySelector('.tips');
-        tips.classList.add('hide');
-    })
+    {
+        const centerCont = document.querySelector('body');
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+            centerCont.classList.toggle('active');
+            const tips = document.querySelector('.tips');
+            tips.classList.add('hide');
+        })
+    }
   </script>
 </html>
