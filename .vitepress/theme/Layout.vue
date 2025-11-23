@@ -1,8 +1,8 @@
 <script setup>
 import { useData } from 'vitepress'
+import Hero from './comp/hero.vue'
 import Home from './home.vue'
 import Project from './project.vue'
-// https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter } = useData()
 </script>
 
@@ -11,32 +11,34 @@ const { site, frontmatter } = useData()
   <div class="head-bar">
     <a href="/" class="head-bar-home head-item">Z</a>
     <div class="head-menu">
-      <a href="/" class="head-menu-item head-item">
+      {{ route }}
+      <a href="/" :class="['head-menu-item','head-item',frontmatter.page === 'home' ? 'active' : '']">
         <div class="head-menu-item-cont">
-          <div class="iconfont icon-shouye"></div>
+          <div class="iconfont icon-home"></div>
           <div class="head-menu-item-text">首页</div>
         </div>
       </a>
-      <a href="/project" class="head-menu-item head-item">
+      <a href="/project" :class="['head-menu-item','head-item',frontmatter.page === 'project' ? 'active' : '']">
         <div class="head-menu-item-cont">
-          <div class="iconfont icon-zonghe"></div>
+          <div class="iconfont icon-project"></div>
           <div class="head-menu-item-text">项目</div>
         </div>
       </a>
-      <a href="https://blog.zhoujump.club" class="head-menu-item head-item">
+      <a href="/blog" :class="['head-menu-item','head-item',frontmatter.page === 'blog' ? 'active' : '']">
         <div class="head-menu-item-cont">
-          <div class="iconfont icon-liebiao"></div>
+          <div class="iconfont icon-blog"></div>
           <div class="head-menu-item-text">博客</div>
         </div>
       </a>
-      <a href="/" class="head-menu-item head-item">
+      <a href="/about" :class="['head-menu-item','head-item',frontmatter.page === 'about' ? 'active' : '']">
         <div class="head-menu-item-cont">
-          <div class="iconfont icon-yijian"></div>
+          <div class="iconfont icon-info"></div>
           <div class="head-menu-item-text">关于</div>
         </div>
       </a>
     </div>
   </div>
+  <hero :desc="frontmatter.desc" :desc2="frontmatter.desc2"></hero>
   <project v-if="frontmatter.page === 'project'"></project>
   <home v-if="frontmatter.page === 'home'"></home>
 </template>
@@ -102,9 +104,6 @@ html{
               color: inherit;
               text-decoration: none;
               display: block;
-              &.icon-zonghe{
-                font-size: 19px;
-              }
             }
             .head-menu-item-text{
               font-size: 14px;
@@ -126,6 +125,10 @@ html{
               transform: translateY(-24px);
               transition-delay: 200ms;
             }
+          }
+          &.active{
+            background-color: #2C64FF;
+            color: white;
           }
         }
       }
