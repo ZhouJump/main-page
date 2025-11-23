@@ -16,6 +16,10 @@ defineProps({
   desc2: {
     type: String,
     default: '0000000000000000'
+  },
+  page: {
+    type: String,
+    default: 'none'
   }
 })
 onMounted(() => {
@@ -25,21 +29,25 @@ onMounted(() => {
 <template>
   <div class="hero-text-cont">
     <div v-for="index in 51" class="block"></div>
-    <div v-for="value in desc" :class="['block',value!=='0' ? 'flip' : '']"><span>{{ value!=='0' ? value : '' }}</span></div>
-    <div v-for="value in desc2" :class="['block',value!=='0' ? 'flip' : '']"><span>{{ value!=='0' ? value : '' }}</span></div>
+    <div v-for="(value,index) in desc" :key="page+index" :class="['block',value!=='0' ? 'flip' : '']"><span>{{ value!=='0' ? value : '' }}</span></div>
+    <div v-for="(value,index) in desc2" :key="page+index" :class="['block',value!=='0' ? 'flip' : '']"><span>{{ value!=='0' ? value : '' }}</span></div>
     <div v-for="index in 51" class="block"></div>
   </div>
 </template>
 <style scoped>
     .hero-text-cont{
+      cursor: default;
+      overflow: hidden;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         display: grid;
         grid-template-columns: repeat(17, 1fr);
         grid-template-rows: repeat(8, 1fr);
         .block{
+            font-family: 'NotoSerifSC';
+            font-weight: 100;
             width: 100%;
-            height: 100%;
+            height: 12.5vh;
             position: relative;
             perspective: 1000px;
             span{
@@ -48,7 +56,7 @@ onMounted(() => {
                 display: block;
                 width: 100%;
                 height: 100%;
-                font-size: 4vw;
+                font-size: 5vw;
                 backface-visibility: hidden;
                 font-weight: 100;
                 display: flex;
