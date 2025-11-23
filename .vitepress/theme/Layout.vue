@@ -1,21 +1,143 @@
 <script setup>
 import { useData } from 'vitepress'
-
+import Home from './home.vue'
+import Project from './project.vue'
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter } = useData()
 </script>
 
 <template>
-  <div v-if="frontmatter.home">
-    <h1>{{ site.title }}</h1>
-    <p>{{ site.description }}</p>
-    <ul>
-      <li><a href="/markdown-examples.html">Markdown Examples</a></li>
-      <li><a href="/api-examples.html">API Examples</a></li>
-    </ul>
+  <link rel="stylesheet" href="/icon/iconfont.css">
+  <div class="head-bar">
+    <a href="/" class="head-bar-home head-item">Z</a>
+    <div class="head-menu">
+      <a href="/" class="head-menu-item head-item">
+        <div class="head-menu-item-cont">
+          <div class="iconfont icon-shouye"></div>
+          <div class="head-menu-item-text">首页</div>
+        </div>
+      </a>
+      <a href="/project" class="head-menu-item head-item">
+        <div class="head-menu-item-cont">
+          <div class="iconfont icon-zonghe"></div>
+          <div class="head-menu-item-text">项目</div>
+        </div>
+      </a>
+      <a href="https://blog.zhoujump.club" class="head-menu-item head-item">
+        <div class="head-menu-item-cont">
+          <div class="iconfont icon-liebiao"></div>
+          <div class="head-menu-item-text">博客</div>
+        </div>
+      </a>
+      <a href="/" class="head-menu-item head-item">
+        <div class="head-menu-item-cont">
+          <div class="iconfont icon-yijian"></div>
+          <div class="head-menu-item-text">关于</div>
+        </div>
+      </a>
+    </div>
   </div>
-  <div v-else>
-    <a href="/">Home</a>
-    <Content />
-  </div>
+  <project v-if="frontmatter.page === 'project'"></project>
+  <home v-if="frontmatter.page === 'home'"></home>
 </template>
+<style>
+html{
+  /* filter: grayscale(100%); */
+  width: 100%;
+  height: 100%;
+  #app{
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+    width: 100%;
+    height: 100%;
+    *{
+      box-sizing: border-box;
+    }
+    .head-bar {
+      z-index: 1000;
+      padding: 8px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      .head-item{
+        box-shadow: 0 0 12px #00000001;
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        text-decoration: none;
+      }
+      .head-menu{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        .head-menu-item{
+          background-color: white;
+          color: #111111;
+          width: 60px;
+          transition-duration: 400ms;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .head-menu-item-cont{
+            height: 24px;
+            width: 60px;
+            overflow: hidden;
+            text-align: center;
+            line-height: 24px;
+            .iconfont{
+              transition-property: transform;
+              transition-delay: 200ms;
+              transition-duration: 200ms;
+              color: inherit;
+              text-decoration: none;
+              display: block;
+              &.icon-zonghe{
+                font-size: 19px;
+              }
+            }
+            .head-menu-item-text{
+              font-size: 14px;
+              transition-property: transform;
+              transition-delay: 100ms;
+              transition-duration: 200ms;
+              display: block;
+            }
+          }
+          &:hover{
+            background-color: #2C64FF;
+            color: white;
+            width: 100px;
+            .iconfont{
+              transform: translateY(-24px);
+              transition-delay: 100ms;
+            }
+            .head-menu-item-text{
+              transform: translateY(-24px);
+              transition-delay: 200ms;
+            }
+          }
+        }
+      }
+      .head-bar-home{
+        background-color: #2C64FF;
+        color: white;
+        text-align: center;
+        line-height: 60px;
+        font-size: 32px;
+        font-weight: 900;
+      }
+    }
+  }
+}
+</style>

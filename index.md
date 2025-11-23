@@ -1,4 +1,4 @@
 ---
-home: true
+page: home
 ---
-
+# 首页
