@@ -159,9 +159,9 @@ const DataList = [
                         position: absolute;
                         top: 50%;
                         left: 50%;
-                        transform: translate(-50%,-50%) scale(0.5);
-                        width: 200%;
-                        height: 200%;
+                        transform: translate(-50%,-50%) scale(0.67);
+                        width: 150%;
+                        height: 150%;
                     }
                 }
             }
