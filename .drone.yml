@@ -12,8 +12,6 @@ steps:
   - name: build
     image: node:lts-alpine
     commands:
-      - npm config set proxy http://172.18.0.3:7890
-      - npm config set https-proxy http://172.18.0.3:7890
       - npm install
       - npm run docs:build
 
