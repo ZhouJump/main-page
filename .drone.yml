@@ -10,12 +10,7 @@ steps:
       - npm run docs:build
 
   - name: deploy
-    image: node:lts-alpine
-    environment:
-      TEO_TOKEN:
-        from_secret: TEO_PAGES_TOKEN
-      PROJECT_NAME:
-        from_secret: TEO_PROJECT
+    image: busybox
     commands:
-      - npm install -g edgeone
-      - edgeone pages deploy ./dist -n "$PROJECT_NAME" -t "$TEO_TOKEN" --force
+      - mkdir -p /opt/1panel/sites/zhoujump.club/index
+      - cp -r ./dist/* /opt/1panel/sites/zhoujump.club/index/
