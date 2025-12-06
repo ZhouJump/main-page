@@ -11,15 +11,14 @@ steps:
 
   - name: deploy
     image: busybox
+    volumes:
+      - name: site_data
+        path: /opt/1panel/sites
     commands:
-      - echo "Checking current directory..."
-      - pwd
-      - echo "Checking dist directory contents..."
-      - ls -la ./dist
-      - echo "Checking target directory..."
-      - ls -la /opt/1panel/sites/
       - mkdir -p /opt/1panel/sites/zhoujump.club/index
-      - echo "Copying files..."
       - cp -r ./dist/* /opt/1panel/sites/zhoujump.club/index/
-      - echo "Checking copied files..."
-      - ls -la /opt/1panel/sites/zhoujump.club/index/
+
+volumes:
+  - name: site_data
+    host:
+      path: /opt/1panel/sites
