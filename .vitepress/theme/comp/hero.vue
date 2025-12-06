@@ -44,7 +44,7 @@ onMounted(() => {
         grid-template-columns: repeat(17, 1fr);
         grid-template-rows: repeat(8, 1fr);
         .block{
-            font-family: 'NotoSerifSC';
+            font-family: 'Noto Serif SC';
             font-weight: 100;
             width: 100%;
             height: 12.5vh;

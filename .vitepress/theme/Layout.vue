@@ -101,10 +101,10 @@ const { site, frontmatter, page } = useData()
   </div>
 </template>
 <style>
-@font-face {
-  font-family: 'NotoSerifSC';
-  src: url('/fonts/NotoSerifSC.ttf');
-}
+/* @font-face {
+  font-family: 'Noto Serif SC';
+  src: url('/fonts/Noto Serif SC.ttf');
+} */
 html{
   /* filter: grayscale(100%); */
   width: 100%;
@@ -162,7 +162,7 @@ html{
             color: #111111;
             font-size: 13px;
           }
-          font-family: 'NotoSerifSC';
+          font-family: 'Noto Serif SC';
         }
       }
       .foot-toy{
@@ -194,7 +194,7 @@ html{
           }
         }
         .beian{
-          font-family: 'NotoSerifSC';
+          font-family: 'Noto Serif SC';
           position: relative;
           display: flex;
           justify-content: center;
@@ -273,7 +273,7 @@ html{
               display: block;
             }
             .head-menu-item-text{
-              font-family: 'NotoSerifSC';
+              font-family: 'Noto Serif SC';
               font-size: 14px;
               transition-property: transform;
               transition-delay: 100ms;

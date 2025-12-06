@@ -95,7 +95,7 @@ const DataList = [
         .view-cont{
             display: grid;
             grid-template-rows: auto auto 1fr auto;
-            font-family: 'NotoSerifSC';
+            font-family: 'Noto Serif SC';
             transition-duration: 600ms;
             border-radius: 12px;
             width: 50vw;
@@ -208,7 +208,7 @@ const DataList = [
         width: 100%;
         .project-item{
             position: relative;
-            font-family: 'NotoSerifSC';
+            font-family: 'Noto Serif SC';
             font-weight: 100;
             border-top: 1px solid #e2e2e2;
             display: block;
