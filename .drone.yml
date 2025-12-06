@@ -3,11 +3,6 @@ type: docker
 name: main-page
 
 steps:
-  - name: config-git-proxy
-    image: alpine/git:latest # 使用一个包含 Git 的基础镜像
-    commands:
-    - git config --global url."https://ghproxy.com/https://github.com/".insteadOf "https://github.com/"
-
   - name: build
     image: node:lts-alpine
     commands:
@@ -16,6 +11,14 @@ steps:
 
   - name: deploy
     image: busybox
+    volumes:
+      - name: site_data
+        path: /opt/1panel/sites
     commands:
       - mkdir -p /opt/1panel/sites/zhoujump.club/index
       - cp -r ./dist/* /opt/1panel/sites/zhoujump.club/index/
+
+volumes:
+  - name: site_data
+    host:
+      path: /opt/1panel/sites
