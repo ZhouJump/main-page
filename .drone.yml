@@ -18,4 +18,4 @@ steps:
         from_secret: TEO_PROJECT
     commands:
       - npm install -g edgeone
-      - edgeone pages deploy ./public -n "$PROJECT_NAME" -t "$TEO_TOKEN" --force
+      - edgeone pages deploy ./dist -n "$PROJECT_NAME" -t "$TEO_TOKEN" --force
