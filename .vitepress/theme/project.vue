@@ -46,7 +46,6 @@ const DataList = [
 <template>
     <div class="project">
         <hero :desc="frontmatter.desc" :desc2="frontmatter.desc2" :page="frontmatter.page"></hero>
-        <div>111</div>
         <div class="project-list">
             <a v-for="(item,index) in DataList" :key="index" :href="item.link" class="project-item" @click="setViewData(index,$event)">
                 <span>{{ item.name }}</span>
