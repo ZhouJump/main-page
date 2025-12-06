@@ -3,6 +3,11 @@ type: docker
 name: main-page
 
 steps:
+  - name: config-git-proxy
+    image: alpine/git:latest # 使用一个包含 Git 的基础镜像
+    commands:
+    - git config --global url."https://ghproxy.com/https://github.com/".insteadOf "https://github.com/"
+
   - name: build
     image: node:lts-alpine
     commands:
