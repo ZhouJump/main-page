@@ -15,27 +15,19 @@ steps:
       - name: site_data
         path: /opt/1panel/sites
     commands:
-      - echo "Starting deployment process..."
-      - echo "Checking current directory..."
-      - pwd
-      - echo "Checking if dist directory exists and its contents..."
-      - ls -la ./dist
-      - echo "Checking if volumes are correctly mounted..."
-      - ls -la /opt/1panel/
+      - echo "Testing volume mounting..."
+      - echo "Current date: $(date)" > /opt/1panel/sites/test.txt
+      - echo "Test file created in /opt/1panel/sites/"
       - ls -la /opt/1panel/sites/
-      - echo "Checking current user..."
-      - id
+      - cat /opt/1panel/sites/test.txt
       - echo "Creating target directory..."
       - mkdir -p /opt/1panel/sites/zhoujump.club/index
-      - echo "Setting permissions on target directory..."
-      - chmod -R 777 /opt/1panel/sites/zhoujump.club
-      - echo "Copying files with verbose output..."
-      - cp -rv ./dist/* /opt/1panel/sites/zhoujump.club/index/
-      - echo "Verifying copy operation..."
-      - ls -la /opt/1panel/sites/zhoujump.club/index/
-      - echo "Checking file content..."
-      - cat /opt/1panel/sites/zhoujump.club/index/index.html | head -10
-      - echo "Deployment completed!"
+      - echo "Copying files..."
+      - cp -r ./dist/* /opt/1panel/sites/zhoujump.club/index/
+      - echo "Setting permissions..."
+      - chmod -R 755 /opt/1panel/sites/zhoujump.club
+      - echo "Verifying files..."
+      - ls -la /opt/1panel/sites/zhoujump.club/index/ | head -20
 
 volumes:
   - name: site_data
