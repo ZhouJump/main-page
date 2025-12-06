@@ -5,7 +5,6 @@ const { site, frontmatter } = useData()
 </script>
 <template>
   <div class="home">
-    111
     <hero :desc="frontmatter.desc" :desc2="frontmatter.desc2" :page="frontmatter.page"></hero>
   </div>
 </template>
