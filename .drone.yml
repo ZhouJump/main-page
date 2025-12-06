@@ -15,19 +15,31 @@ steps:
       - name: site_data
         path: /opt/1panel/sites
     commands:
-      - echo "Testing volume mounting..."
-      - echo "Current date: $(date)" > /opt/1panel/sites/test.txt
-      - echo "Test file created in /opt/1panel/sites/"
+      - echo "=== Testing Volume Mounting ==="
+      - echo "1. Testing direct file creation in mounted volume..."
+      - echo "Test content from CI pipeline at $(date)" > /opt/1panel/sites/ci_test_file.txt
+      
+      - echo "2. Listing mounted volume contents..."
       - ls -la /opt/1panel/sites/
-      - cat /opt/1panel/sites/test.txt
-      - echo "Creating target directory..."
+      
+      - echo "3. Reading the test file back..."
+      - cat /opt/1panel/sites/ci_test_file.txt
+      
+      - echo "4. Checking existing zhoujump.club directory..."
+      - ls -la /opt/1panel/sites/zhoujump.club/ 2>/dev/null || echo "Directory not found"
+      
+      - echo "5. Creating index directory..."
       - mkdir -p /opt/1panel/sites/zhoujump.club/index
-      - echo "Copying files..."
-      - cp -r ./dist/* /opt/1panel/sites/zhoujump.club/index/
-      - echo "Setting permissions..."
-      - chmod -R 755 /opt/1panel/sites/zhoujump.club
-      - echo "Verifying files..."
-      - ls -la /opt/1panel/sites/zhoujump.club/index/ | head -20
+      
+      - echo "6. Copying files with detailed output..."
+      - cp -v ./dist/index.html /opt/1panel/sites/zhoujump.club/index/
+      - cp -v ./dist/project.html /opt/1panel/sites/zhoujump.club/index/
+      
+      - echo "7. Verifying copied files..."
+      - ls -la /opt/1panel/sites/zhoujump.club/index/
+      
+      - echo "8. Checking copied file content..."
+      - cat /opt/1panel/sites/zhoujump.club/index/index.html | grep -i "title" || echo "No title tag found"
 
 volumes:
   - name: site_data
