@@ -3,12 +3,17 @@ type: docker
 name: main-page
 
 clone:
-  git:
-    environment:
-      HTTP_PROXY: http://127.0.0.1:7890 
-      HTTPS_PROXY: http://127.0.0.1:7890
+  disable: true
 
 steps:
+  - name: clone
+    image: alpine/git
+    commands:
+      - git config --global http.proxy http://127.0.0.1:7890
+      - git config --global https.proxy http://127.0.0.1:7890
+      - git clone https://github.com/zhoujump/main-page.git .
+      - git checkout version2
+
   - name: build
     image: node:lts-alpine
     commands:
