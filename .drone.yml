@@ -5,8 +5,8 @@ name: main-page
 clone:
   git:
     environment:
-      HTTP_PROXY: http://172.18.0.3:7890 
-      HTTPS_PROXY: http://172.18.0.3:7890
+      HTTP_PROXY: http://127.0.0.1:7890 
+      HTTPS_PROXY: http://127.0.0.1:7890
 
 steps:
   - name: build
