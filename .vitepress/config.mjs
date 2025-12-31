@@ -11,7 +11,6 @@ export default defineConfig({
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap', rel: 'stylesheet' }],
-    ['script', { charset: 'utf-8', id: 'LA_COLLECT', src: '//sdk.51.la/js-sdk-pro.min.js?id=3JzdjakNrCyaUiKx&ck=3JzdjakNrCyaUiKx' }]
   ],
   cleanUrls: true,
   sitemap: {
