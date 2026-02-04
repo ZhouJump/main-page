@@ -11,7 +11,6 @@ export default defineConfig({
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap', rel: 'stylesheet' }],
-    ['script', { src: 'https://umami.zhoujump.club/script.js', 'data-website-id': '85742351-c4fa-4d78-a116-3e2ea3b1897b', defer: ''}]
   ],
   cleanUrls: true,
   sitemap: {
