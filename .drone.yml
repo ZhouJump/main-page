@@ -6,7 +6,6 @@ clone:
   retries: 8
 
 steps:
-
   - name: build
     image: node:lts-alpine
     commands:
@@ -26,3 +25,9 @@ volumes:
   - name: site_data
     host:
       path: /opt/1panel/1panel/www/sites
+
+trigger:
+  branch:
+    - version2
+  event:
+    - push
