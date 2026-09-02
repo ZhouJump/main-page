@@ -18,8 +18,8 @@ steps:
       - name: site_data
         path: /opt/1panel/1panel/www/sites
     commands:
-      - mkdir -p /opt/1panel/1panel/www/sites/zhoujump.club/index
-      - cp -r ./dist/* /opt/1panel/1panel/www/sites/zhoujump.club/index/
+      - mkdir -p /opt/1panel/1panel/www/sites/zhoujump.com/index
+      - cp -r ./dist/* /opt/1panel/1panel/www/sites/zhoujump.com/index/
 
 volumes:
   - name: site_data

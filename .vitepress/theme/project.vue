@@ -14,17 +14,17 @@ const DataList = [
     {
         name: '粥粥个人博客',
         desc: '我们所度过的每个平凡的日常，也许就是连续发生的奇迹。',
-        link: 'https://blog.zhoujump.club',
+        link: 'https://blog.zhoujump.com',
     },
     {
         name: '简历编辑器',
         desc: '做简历什么的，超简单的拉！',
-        link: 'https://resume.zhoujump.club',
+        link: 'https://resume.zhoujump.com',
     },
     {
         name: '码农名片生成器',
         desc: '生成vscode风格的名片',
-        link: 'https://businesscard.zhoujump.club/',
+        link: 'https://businesscard.zhoujump.com/',
     },
     {
         name: '掌上莆院(uniapp+uniCloud)',

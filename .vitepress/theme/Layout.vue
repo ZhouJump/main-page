@@ -53,10 +53,10 @@ const { site, frontmatter, page } = useData()
       </div>
       <div class="nav-item">
         <div class="title">项目表</div>
-          <a href="https://blog.zhoujump.club" class="item">粥粥个人博客</a>
-          <a href="https://resume.zhoujump.club" class="item">简历编辑器</a>
+          <a href="https://blog.zhoujump.com" class="item">粥粥个人博客</a>
+          <a href="https://resume.zhoujump.com" class="item">简历编辑器</a>
           <a href="https://github.com/ZhouJump/qq-fuck-sidebar" class="item">QQ侧栏编辑插件</a>
-          <a href="https://businesscard.zhoujump.club/" class="item">码农名片生成器</a>
+          <a href="https://businesscard.zhoujump.com/" class="item">码农名片生成器</a>
           <a href="https://github.com/ZhouJump/JiaowuUniapp" class="item">掌上莆院(uniapp+uniCloud)</a>
           <a href="https://github.com/ZhouJump/mail-system-mysql" class="item">邮件收发系统(MySQL+Spring)</a>
           <a href="https://github.com/ZhouJump/wechat-little-blue-book" class="item">小蓝书(原生微信小程序)</a>
@@ -73,8 +73,8 @@ const { site, frontmatter, page } = useData()
         <a href="https://github.com/ZhouJump" class="item">GitHub.com</a>
         <a href="https://www.linkedin.com/in/zhou-jump/" class="item">领英-LinkedIn</a>
         <a href="https://space.bilibili.com/346093756" class="item">哔哩哔哩-Bilibili</a>
-        <a href="https://blog.zhoujump.club/index.xml" class="item">RSS订阅-RSS</a>
-        <a href="mailto:x@zhoujump.club" class="item">电子邮箱-Email</a>
+        <a href="https://blog.zhoujump.com/index.xml" class="item">RSS订阅-RSS</a>
+        <a href="mailto:x@zhoujump.com" class="item">电子邮箱-Email</a>
       </div>
     </div>
     <div class="foot-toy">

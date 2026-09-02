@@ -7,7 +7,7 @@ const parseXml = promisify(parseString);
 
 export default {
     async load() {
-        const xmlUrl = 'https://blog.zhoujump.club/index.xml';
+        const xmlUrl = 'https://blog.zhoujump.com/index.xml';
         
         try {
             // 1. 获取 XML 文本

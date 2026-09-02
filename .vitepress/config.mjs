@@ -14,6 +14,6 @@ export default defineConfig({
   ],
   cleanUrls: true,
   sitemap: {
-    hostname: 'https://www.zhoujump.club',
+    hostname: 'https://www.zhoujump.com',
   }
 })
