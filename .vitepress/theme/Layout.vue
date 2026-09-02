@@ -94,7 +94,7 @@ const { site, frontmatter, page } = useData()
         <div class="toy-item">B</div>
       </div>
       <div class="beian">
-        <a href="https://beian.miit.gov.cn" class="beian-item">湘ICP备2025141796号-1</a>
+        <a href="https://beian.miit.gov.cn" class="beian-item">湘ICP备2025141796号-2</a>
         <a href="https://beian.mps.gov.cn/#/query/webSearch?code=35021102002336" class="beian-item"><img src="/image/beian.png" alt="icp">闽公网安备35021102002336号</a>
       </div>
     </div>
