@@ -22,6 +22,11 @@ const DataList = [
         link: 'https://resume.zhoujump.com',
     },
     {
+        name: 'NoteFlow',
+        desc: '导入、识别并练习你的曲谱。',
+        link: 'https://noteflow.zhoujump.com',
+    },
+    {
         name: '码农名片生成器',
         desc: '生成vscode风格的名片',
         link: 'https://businesscard.zhoujump.com/',
