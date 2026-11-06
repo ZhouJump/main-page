@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["v3"]
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  @@map("users")
+  @@schema("v3")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  slug      String   @unique
+  nameZh    String
+  nameEn    String
+  descZh    String   @default("")
+  descEn    String   @default("")
+  imagePath  String?
+  titleColor String   @default("#EFEFEB")
+  createdAt  DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts Post[]
+
+  @@map("categories")
+  @@schema("v3")
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  slug        String
+  lang        String
+  title       String
+  excerpt     String   @default("")
+  contentMd   String
+  categoryId  Int
+  status      String   @default("published")
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  category Category  @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  tags     PostTag[]
+  comments Comment[]
+
+  @@unique([lang, slug])
+  @@index([lang, status, publishedAt])
+  @@index([categoryId])
+  @@map("posts")
+  @@schema("v3")
+}
+
+model Tag {
+  id     Int    @id @default(autoincrement())
+  slug   String @unique
+  nameZh String
+  nameEn String
+
+  posts PostTag[]
+
+  @@map("tags")
+  @@schema("v3")
+}
+
+model PostTag {
+  postId Int
+  tagId  Int
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+  @@map("post_tags")
+  @@schema("v3")
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  postId    Int
+  nickname  String
+  emailHash String?
+  content   String
+  status    String   @default("visible")
+  ipHash    String?
+  createdAt DateTime @default(now())
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId, status, createdAt])
+  @@map("comments")
+  @@schema("v3")
+}
+
+model Media {
+  id        Int      @id @default(autoincrement())
+  path      String   @unique
+  mime      String
+  size      Int
+  width     Int?
+  height    Int?
+  createdAt DateTime @default(now())
+
+  @@map("media")
+  @@schema("v3")
+}

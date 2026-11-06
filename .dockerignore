@@ -1,0 +1,9 @@
+node_modules
+.data
+.output
+.nuxt
+data/legacy
+data/uploads
+.env
+.git
+test

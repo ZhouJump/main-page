@@ -1,0 +1,39 @@
+.outter{
+	max-width: 600px;
+	margin: auto;
+}
+	
+.title{
+	font-size: 30px;
+}
+
+.list{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 4px;
+}
+.item{
+	padding: 10px;
+	border: 1px solid grey;
+	border-radius: 6px;
+	display: flex;
+	grid-gap: 10px;
+}
+.item .delete{
+	margin-left: auto;
+}
+.add{
+	padding: 10px;
+	border: 1px solid grey;
+	border-radius: 6px;
+	display: flex;
+	grid-gap: 10px;
+}
+.add input{
+	flex: 1;
+}
+.add .add-btn{
+	margin-left: auto;
+}
